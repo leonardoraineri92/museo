@@ -1,0 +1,18 @@
+<div *ngIf="data as museum">
+  <div class="background_gray p-3">
+    <h2>{{ museum?.name }}</h2>
+  </div>
+  <div class="container">
+    <div class="py-5">
+      <app-museum-filter
+        [fillFilter]="fillSelectFilter"
+        (valueForm)="onSearch($event)"
+      ></app-museum-filter>
+    </div>
+  </div>
+  <app-galleries-list
+    [data]="museum?.galleries"
+    (editArtist)="editPaintingArtist($event)"
+    (buystatus)="editGalleries($event)"
+  ></app-galleries-list>
+</div>

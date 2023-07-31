@@ -1,0 +1,28 @@
+<!-- [id]="'surname' + paint.painting?.id" -->
+<!--usato quando si utlizza la soluzione input SET
+   placeholder="Nome Artista" [ngModel]="nameArtist" (ngModelChange)="setName($event)" -->
+<div class="margin-top">
+  <h6>Modifica artista</h6>
+
+  <input
+    type="text"
+    class="form-control margin-top"
+    placeholder="Nome Artista"
+    [ngModel]="copyPaintingDetailArtist.name"
+    (ngModelChange)="setKey('name', $event)"
+    required=""
+  />
+  <input
+    type="text"
+    class="form-control margin-top"
+    placeholder="Cognome Artista"
+    [ngModel]="copyPaintingDetailArtist.surname"
+    (ngModelChange)="setKey('surname', $event)"
+    required=""
+  />
+
+  <button class="w-100 btn margin-top" (click)="onEditArtist()" type="submit">
+    Salva
+  </button>
+  <div class="invalid-feedback">Inserisci i dati</div>
+</div>

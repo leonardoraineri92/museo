@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <label><b>Select artist</b></label>
+      <select
+        class="form-select form-select-lg mb-3 w-100 select_style"
+        multiple
+        [(ngModel)]="artistsName"
+        name="artistsName"
+      >
+        <option *ngFor="let print of fillFilter?.artistsName" [value]="print">
+          {{ print }}
+        </option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label><b>Select status</b></label>
+      <select
+        class="form-select select_style mb-3 w-100"
+        [(ngModel)]="paintingsStatus"
+        name="paintingsStatus"
+      >
+        <option [ngValue]="true">Available</option>
+        <option [ngValue]="false">Not available</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label><b>Select painting</b></label>
+      <select
+        class="form-select form-select-lg mb-3 w-100 select_style"
+        multiple
+        [(ngModel)]="paintingsName"
+        name="paintingsName"
+      >
+        <option *ngFor="let print of fillFilter?.paintingsName" [value]="print">
+          {{ print }}
+        </option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <button
+        (click)="search()"
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+      >
+        Search
+      </button>
+      <button
+        (click)="resetSelect()"
+        type="button"
+        class="btn btn-sm btn-outline-secondary"
+      >
+        Reset
+      </button>
+    </div>
+  </div>
+</div>
